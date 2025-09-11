@@ -1,0 +1,129 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider      = "prisma-client-js"
+  output        = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         Int      @id @default(autoincrement())
+  name       String
+  email      String   @unique
+  password   String
+  address    String?
+  postalCode String?
+  phone      String?
+  role       String   @default("user")
+  createdAt  DateTime @default(now())
+  carts      Cart[]
+  Tokens     Token[]
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String
+  price       Float
+  brand       String
+  category    Category
+  releaseDate Int
+
+  laptop    Laptop?
+  tablet    Tablet?
+  mobile    Mobile?
+  headphone Headphone?
+
+  cartItems  CartItem[]
+  imagesPath String[]
+  count      Int        @default(1)
+  salesCount Int        @default(0)
+}
+
+model Laptop {
+  productId  Int    @id
+  ram        Int
+  processor  String
+  storage    Int
+  screenSize Float
+  gpu        String
+
+  product Product @relation(fields: [productId], references: [id])
+}
+
+model Tablet {
+  productId   Int    @id
+  ram         Int
+  processor   String
+  storage     Int
+  screenSize  Float
+  batteryLife Float
+
+  product Product @relation(fields: [productId], references: [id])
+}
+
+model Mobile {
+  productId       Int    @id
+  ram             Int
+  processor       String
+  storage         Int
+  screenSize      Float
+  camera          Int
+  batteryCapacity Int
+
+  product Product @relation(fields: [productId], references: [id])
+}
+
+model Headphone {
+  productId       Int     @id
+  connectionType  String
+  noiseCancelling Boolean
+  batteryLife     Float
+
+  product Product @relation(fields: [productId], references: [id])
+}
+
+enum Category {
+  laptop
+  tablet
+  mobile
+  headphone
+}
+
+model Cart {
+  id        Int        @id @default(autoincrement())
+  userId    Int
+  user      User       @relation(fields: [userId], references: [id])
+  items     CartItem[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model CartItem {
+  id        Int     @id @default(autoincrement())
+  cartId    Int
+  cart      Cart    @relation(fields: [cartId], references: [id])
+  productId Int
+  product   Product @relation(fields: [productId], references: [id])
+  quantity  Int     @default(1)
+}
+
+model Token {
+  id          Int      @id @default(autoincrement())
+  userId      Int
+  user        User     @relation(fields: [userId], references: [id])
+  hashedToken String   @unique
+  expiresAt   DateTime
+  isValid     Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([userId, isValid])
+}
