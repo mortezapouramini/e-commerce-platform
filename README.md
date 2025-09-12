@@ -73,8 +73,8 @@ Follow these steps to get the project running locally:
 
 ```bash
 # 1. Clone and install dependencies
-git clone https://github.com/username/project-name.git
-cd project-name
+git clone https://github.com/mortezapouramini/e-commerce-platform.git
+cd e-commerce-platform
 npm install
 
 
@@ -97,7 +97,7 @@ node server
 
 # 5. Access API documentation
 # Once the server is running:
-# http://localhost:3000/api/docs
+# http://localhost:your-port/api/docs
 
 
 ## 6. Screenshots / Demo
