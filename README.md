@@ -101,9 +101,5 @@ node server
 
 
 ## 6. Screenshots / Demo
-
-![Swagger UI](./assets/swagger-ui1.png)
-![Swagger UI](./assets/swagger-ui2.png)
-
-_Example of API documentation via Swagger UI_
+   soon...
 ```
