@@ -1,5 +1,5 @@
 {
-  "name": "store",
+  "name": "e-commerce-platform",
   "version": "1.0.0",
   "description": "Backend for my store project",
   "main": "server.js",
