@@ -102,8 +102,10 @@ node server
 
 ## 6. Screenshots / Demo
 
-![Swagger UI](./assets/swagger-ui1.png)
-![Swagger UI](./assets/swagger-ui2.png)
+<p align='center'>
+    <img src="./assets/swagger-ui1.png" alt="Swagger UI" width="300"/>
+    <img src="./assets/swagger-ui2.png" alt="Swagger UI" width="300"/>
+</p>
 
-_Example of API documentation via Swagger UI_
+
 ```
