@@ -99,13 +99,11 @@ node server
 # Once the server is running:
 # http://localhost:your-port/api/docs
 
+```
 
-## 6. Screenshots / Demo
+## Screenshots / Demo
 
 <p align='center'>
     <img src="./assets/swagger-ui1.png" alt="Swagger UI" width="300"/>
     <img src="./assets/swagger-ui2.png" alt="Swagger UI" width="300"/>
 </p>
-
-
-```
