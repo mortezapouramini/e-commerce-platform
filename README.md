@@ -104,6 +104,6 @@ node server
 ## Screenshots / Demo
 
 <p align='center'>
-    <img src="./assets/swagger-ui1.png" alt="Swagger UI" width="300"/>
-    <img src="./assets/swagger-ui2.png" alt="Swagger UI" width="300"/>
+    <img src="./assets/swagger-ui1.png" alt="Swagger UI" width="500"/>
+    <img src="./assets/swagger-ui2.png" alt="Swagger UI" width="500"/>
 </p>
