@@ -13,9 +13,9 @@ const swaggerSpec = require("./config/swagger.config");
 const logger = require("./middlewares/logger.middleware");
 
 const authRoutes = require("./routes/auth.routes");
-const userRoutes = require("./routes//user.routes");
-const productRoutes = require("./routes//product.routes");
-const orderRoutes = require("./routes//order.routes");
+const userRoutes = require("./routes/user.routes");
+const productRoutes = require("./routes/product.routes");
+const cartRoutes = require("./routes/cart.routes");
 
 
 // ================================
@@ -45,7 +45,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/products", productRoutes);
-app.use("/orders", orderRoutes);
+app.use("/orders", cartRoutes);
 
 // ================================
 // Swagger Documentation
