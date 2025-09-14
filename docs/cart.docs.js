@@ -3,7 +3,7 @@
  * /carts/{productId}:
  *   post:
  *     summary: Add to cart
- *     tags: [orders]
+ *     tags: [carts]
  *     parameters:
  *       - name: productId
  *         in: path
@@ -55,7 +55,7 @@
  * /carts/{itemId}:
  *   delete:
  *     summary: Delete product from cart
- *     tags: [orders]
+ *     tags: [carts]
  *     parameters:
  *       - name: itemId
  *         in: path
@@ -109,7 +109,7 @@
  * /carts:
  *   get:
  *     summary: Get user cart
- *     tags: [orders]
+ *     tags: [carts]
  *     parameters:
  *       - name: userId
  *         in: path

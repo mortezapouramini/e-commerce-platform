@@ -3,6 +3,7 @@
  * /users/{userId}:
  *   patch:
  *     summary: Update user info
+ *     tags: [users]
  *     parameters:
  *       - name: userId
  *         in: path
@@ -16,7 +17,6 @@
  *         description: Authentication token
  *         schema:
  *           type: string
- *     tags: [users]
  *     requestBody:
  *       required: At least one
  *       content:
