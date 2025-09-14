@@ -1,6 +1,6 @@
 /**
  * @swagger
- * /orders/{productId}:
+ * /carts/{productId}:
  *   post:
  *     summary: Add to cart
  *     tags: [orders]
@@ -52,7 +52,7 @@
 
 /**
  * @swagger
- * /orders/{itemId}:
+ * /carts/{itemId}:
  *   delete:
  *     summary: Delete product from cart
  *     tags: [orders]
@@ -106,7 +106,7 @@
 
 /**
  * @swagger
- * /orders:
+ * /carts:
  *   get:
  *     summary: Get user cart
  *     tags: [orders]

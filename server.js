@@ -45,7 +45,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/products", productRoutes);
-app.use("/orders", cartRoutes);
+app.use("/carts", cartRoutes);
 
 // ================================
 // Swagger Documentation
