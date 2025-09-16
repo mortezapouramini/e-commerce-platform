@@ -17,7 +17,6 @@ const userRoutes = require("./routes/user.routes");
 const productRoutes = require("./routes/product.routes");
 const cartRoutes = require("./routes/cart.routes");
 
-
 // ================================
 // Initialize App
 // ================================
@@ -26,7 +25,7 @@ const app = express();
 // ================================
 // Global Middlewares
 // ================================
-app.use(helmet());
+// app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
 app.use(limiter);
